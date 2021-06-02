@@ -1,3 +1,7 @@
+/*
+Practice with query of COVID data
+*/
+
 SELECT *
 FROM portfolio_project..covid_deaths
 WHERE continent IS NOT NULL
