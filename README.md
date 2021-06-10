@@ -7,3 +7,4 @@ This repository contains various projects that show my growing skills in SQL, Py
 - [R Analysis of Fitbit Data](https://www.kaggle.com/amystucker/fitbit-bellabeat-case-study)
 - [Bellabeat Case Study](https://docs.google.com/presentation/d/1VwPxPxqw-psMsFw8TFuTrCJxB_XzElQC0lOIZp5wc4g/edit?usp=sharing)
 - [My Data Analysis Process (Example)](https://docs.google.com/document/d/18sun561pWnmHVtdkzQrohrtiTRUZQsnEuZ26vrPAfsw/edit?usp=sharing)
+- [Movie Rating Visualizations in Python](Movie_Ratings_Analytics.ipynb)
