@@ -2,4 +2,4 @@
 This repository contains various projects that show my growing skills in SQL and Python.
 
 - Query of Covid data
-- Query of Nasvhille Housing Data
+- Query of Nashville Housing Data
