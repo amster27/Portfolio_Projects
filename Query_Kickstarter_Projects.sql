@@ -9,10 +9,18 @@ ALTER TABLE kickstarter_projects
 DROP COLUMN F12, F13, Category1
 
 -- Find Which project with goal over $1000 had the biggest completion percentage
-SELECT Name, Goal, Pledged, (Pledged/Goal)*100 AS goal_completion_percentage
+SELECT ID, Name, Goal, Pledged, (Pledged/Goal)*100 AS goal_completion_percentage
 FROM portfolio_project..kickstarter_projects
 WHERE Goal>1000 AND State='Successful' AND PLEDGED > 0
 ORDER BY goal_completion_percentage DESC
+
+--Exploding Kittens has the greated goal completion percentage with 87,825% of the goal amount was pledged
+
+-- Find the game with the most money pledged
+SELECT ID, Name, Goal, Pledged
+FROM portfolio_project..kickstarter_projects
+WHERE State='Successful'
+ORDER BY Pledged DESC
 
 -------------------------------------------------------------------------
 
@@ -55,16 +63,16 @@ ORDER BY Category
 --Games still has more backers overall (double the amount of next category), even in failed projects. Games are backed most often
 
 -- Explore further by Subcategory
-SELECT Subcategory, ROUND(AVG(backers),0) AS Avg_num_backers
+SELECT Subcategory, Category, ROUND(AVG(backers),0) AS Avg_num_backers
 FROM kickstarter_projects
 WHERE State = 'Successful'
-GROUP BY Subcategory
+GROUP BY Subcategory, Category
 ORDER BY Avg_num_backers DESC
 
-SELECT Subcategory, ROUND(AVG(backers),0) AS Avg_num_backers
+SELECT Subcategory, Category, ROUND(AVG(backers),0) AS Avg_num_backers
 FROM kickstarter_projects
 WHERE State = 'Failed'
-GROUP BY Subcategory
+GROUP BY Subcategory, Category
 ORDER BY Avg_num_backers DESC
 
 --Video games still had the highest number of backers for both failed and successfule projects
@@ -196,12 +204,13 @@ SELECT COUNT(*)
 FROM #days_elapsed
 
 -- Query temp table to find the counts of each category per number of day
-SELECT Category, Total_campaign_days, COUNT(*) AS Total
+SELECT Category, Total_campaign_days, COUNT(*) AS Count_of_projects
 FROM #days_elapsed
-GROUP BY Total_campaign_days, Category 
-ORDER BY Total_campaign_days, Total DESC
+GROUP BY Category, Total_campaign_days
+ORDER BY Count_of_projects DESC
 
 -- There seem to be a lot around the 30, 60, and 90 marks, so it would be good to work with this data further in Python where I can write code to separate and compare
+-- The projects with the most successful campaigns were 30 days (1 month long), so a month might be the best amount of time to set for projects to be successful
 
 -- Messing around with pivot tables that don't get me what I wanted from above...
 SELECT Category
@@ -236,7 +245,24 @@ SELECT
   *
 FROM Pivoted;
 
--- To look at next time...
+
 -- Which category of products was most successful in its funding? (Which category is most likely to be funded?)
--- Continue exploring the success factors for games
--- Percentage of failed and successful projects, etc.
+SELECT *
+FROM kickstarter_projects
+
+SELECT Category, COUNT(State) AS Num_of_successful_projects, COUNT(State) * 100.0/SUM(COUNT(*)) OVER() AS Percent_of_successful_games
+FROM kickstarter_projects
+WHERE State = 'Successful'
+GROUP BY Category
+ORDER BY Num_of_successful_projects DESC
+
+-- Which Subcategory of products was most successful in its funding?
+SELECT Subcategory, Category, COUNT(State) AS Num_of_successful_projects, COUNT(State) * 100.0/SUM(COUNT(*)) OVER() AS Percent_of_successful_games
+FROM kickstarter_projects
+WHERE State = 'Successful'
+GROUP BY Subcategory, Category
+ORDER BY Num_of_successful_projects DESC
+
+--------------------------------------------------
+
+-- Copy and paste the tables into excel to visualize in Tableau
