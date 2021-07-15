@@ -9,3 +9,4 @@ This repository contains various projects that show my growing skills in SQL, Py
 - [Movie Rating Visualizations in Python](Movie_Ratings_Analytics.ipynb)
 - [SQL Query of Kickstarter Projects](Query_Kickstarter_Projects.sql)
 - [Tableau Dashboard Kickstarter Projects](https://public.tableau.com/views/KickstarterProjectMavenAnalyticsWorkinProgress/KickstarterProjectsDashboard?:language=en-US&:display_count=n&:origin=viz_share_link)
+- [Olympic Medals Alteryx Workflow]()
