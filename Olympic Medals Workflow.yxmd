@@ -1,0 +1,521 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.2">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="42" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>athlete_events.xlsx
+Query=`athlete_events$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ID" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="Double" />
+            <Field name="Name" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Sex" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Age" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Height" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Weight" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Team" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="NOC" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Games" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Year" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="Double" />
+            <Field name="Season" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="City" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Sport" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Event" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Medal" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="234" y="42" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Medal] = "Gold"</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Medal] = "Gold"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="138" y="42" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="390" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="NOC" action="GroupBy" rename="NOC" />
+            <SummarizeField field="Medal" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>athlete_events.xlsx
+Query=`athlete_events$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ID" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="Double" />
+            <Field name="Name" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Sex" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Age" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Height" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Weight" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Team" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="NOC" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Games" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Year" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="Double" />
+            <Field name="Season" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="City" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Sport" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Event" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Medal" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="246" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Medal] = "Silver"</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Medal] = "Silver"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="138" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="390" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="NOC" action="GroupBy" rename="NOC" />
+            <SummarizeField field="Medal" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>athlete_events.xlsx
+Query=`athlete_events$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ID" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="Double" />
+            <Field name="Name" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Sex" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Age" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Height" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Weight" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Team" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="NOC" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Games" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Year" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="Double" />
+            <Field name="Season" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="City" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Sport" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Event" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+            <Field name="Medal" size="255" source="File: C:\Users\amste\OneDrive\Desktop\Maven Analytics\Olympics\athlete_events.xlsx|||`athlete_events$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="234" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Medal] = "Bronze"</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Medal] = "Bronze"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="138" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="390" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="NOC" action="GroupBy" rename="NOC" />
+            <SummarizeField field="Medal" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="606" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="NOC" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="NOC" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Count" selected="True" rename="Gold_Medals" input="Left_" />
+                <SelectField field="Right_NOC" selected="False" rename="Right_NOC" input="Right_" />
+                <SelectField field="Right_Count" selected="True" rename="Silver_Medals" input="Right_" />
+                <SelectField field="Right_Team" selected="False" rename="Right_Team" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="750" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="NOC" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="NOC" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_NOC" selected="False" rename="Right_NOC" input="Right_" />
+                <SelectField field="Right_Count" selected="True" rename="Bronze_Medals" input="Right_" />
+                <SelectField field="Right_Team" selected="False" rename="Right_Team" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="846" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Gold_Medals" order="Descending" />
+            <Field field="Silver_Medals" order="Descending" />
+            <Field field="Bronze_Medals" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Gold_Medals - Descending
+Silver_Medals - Descending
+Bronze_Medals - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1002" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">C:\Users\amste\OneDrive\Desktop\Dataset Practice\Marketing Data\Olympic_Medals_per_Country.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <SkipFieldNames>False</SkipFieldNames>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Olympic_Medals_per_Country.xlsx
+Query=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="18" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="18" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="True" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="True" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="19" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Join" />
+      <Destination ToolID="19" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Join" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Olympic Medals Workflow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="4d84ecf3-d41b-4630-af21-c0c801fea1c3" />
+      <Telemetry>
+        <PreviousWorkflowId value="24b3c021-66a6-49d6-8c8b-d4858bb93c31" />
+        <OriginWorkflowId value="4d84ecf3-d41b-4630-af21-c0c801fea1c3" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
