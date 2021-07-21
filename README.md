@@ -10,4 +10,3 @@ This repository contains various projects that show my growing skills in SQL, Py
 - [SQL Query of Kickstarter Projects](Query_Kickstarter_Projects.sql)
 - [Tableau Dashboard Kickstarter Projects](https://public.tableau.com/views/KickstarterProjectMavenAnalyticsWorkinProgress/KickstarterProjectsDashboard?:language=en-US&:display_count=n&:origin=viz_share_link)
 - [Olympic Medals Alteryx Workflow](https://github.com/amster27/Portfolio_Projects/blob/main/Olympic%20Medals%20Workflow.yxmd)
-- [Olympic Medals by Gender Alteryx Workflow](https://github.com/amster27/Portfolio_Projects/blob/main/Olympic%20Medals%20per%20country%20by%20gender%20workflow.yxmd)
